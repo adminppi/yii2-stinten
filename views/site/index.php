@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use app\models\Buku;
 
 /* @var $this yii\web\View */
 
@@ -10,7 +11,10 @@ $this->title = 'My Yii Application';
 
     <div class="jumbotron" style="margin-bottom:0px">
         <h1>Congratulations!</h1>
-
+        <?php foreach(Buku::find()->andWhere(['id_kategori'=>1])->all() as $buku) { ?>
+        <h1><?php print $buku->nama; ?></h1>
+        <?php } ?>
+        <h2>Heading</h2>
         <p class="lead">You have successfully created your Yii-powered application.</p>
 
     </div>
@@ -28,7 +32,8 @@ $this->title = 'My Yii Application';
 
         <div class="row">
             <div class="col-lg-4">
-                <h2>Heading</h2>
+
+                
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
