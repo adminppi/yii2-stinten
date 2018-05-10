@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 10 Mei 2018 pada 04.30
+-- Generation Time: 10 Mei 2018 pada 05.06
 -- Versi Server: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -32,6 +32,8 @@ CREATE TABLE `anggota` (
   `id` int(11) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `alamat` varchar(255) DEFAULT NULL,
+  `templat_lahir` varchar(255) DEFAULT NULL,
+  `tanggal_lahir` date DEFAULT NULL,
   `telepon` bigint(20) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `id_jenis_kelamin` int(11) DEFAULT NULL,
@@ -51,7 +53,8 @@ CREATE TABLE `buku` (
   `id_penulis` int(11) DEFAULT NULL,
   `id_penerbit` int(11) DEFAULT NULL,
   `id_kategori` int(11) DEFAULT NULL,
-  `sinopsis` text
+  `sinopsis` text,
+  `stok` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
